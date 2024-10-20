@@ -1,0 +1,26 @@
+MemorySummary:
+  - ChangeRequest:
+      Date: '2024-10-20T23:03:02.205145'
+      Details:
+        - RemovedFeature: Counter
+        - NewFeature: OnboardingFlow for Gyde app
+        - OnboardingPages:
+          - WelcomePage
+          - AuthenticationOptionsPage
+          - PhoneNumberInputPage
+          - VerificationCodePage
+          - EmailCollectionPage
+          - WelcomeConfirmationPage
+          - TermsAndConditionsPage
+  - HighLevelPlan:
+      Date: '2024-10-20T23:03:28.575313'
+      Details:
+        - Overview: Significant changes to introduce new onboarding flow and remove counter feature
+        - NewFeatures: Multiple onboarding pages with sliding transitions
+        - ModifiedFeatures: Updated app branding to reflect Gyde's luxury chauffeur service
+        - RemovedFeatures: Counter feature from HomeView and HomeViewModel
+        - ArchitecturalChanges: Updated app's routing to include new onboarding flow using Stacked Router
+        - CrossCuttingConcerns: Consistent use of Gyde branding across all UI components and updated dependency injection setup
+  - PublicInterfaceDiff:
+      Date: '2024-10-20T23:04:13.753588'
+      Details: ''
