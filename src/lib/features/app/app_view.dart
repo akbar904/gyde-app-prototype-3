@@ -33,7 +33,7 @@ class _App extends ViewModelWidget<AppViewModel> {
           FocusManager.instance.primaryFocus?.unfocus();
         },
         child: MaterialApp(
-          initialRoute: Routes.startupView,
+          initialRoute: Routes.welcomeView,
           onGenerateRoute: StackedRouter().onGenerateRoute,
           navigatorKey: StackedService.navigatorKey,
           navigatorObservers: [
