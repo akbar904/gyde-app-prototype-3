@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'auth_options_viewmodel.dart';
 
 class AuthOptionsView extends StatelessWidget {
   @override
@@ -35,15 +36,5 @@ class AuthOptionsView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class AuthOptionsViewModel extends BaseViewModel {
-  void navigateToPhoneInput() {
-    // Logic to navigate to the phone input view
-  }
-
-  void navigateToEmailCollection() {
-    // Logic to navigate to the email collection view
   }
 }

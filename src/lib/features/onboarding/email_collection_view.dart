@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/email_collection_viewmodel.dart';
 
 class EmailCollectionView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<EmailCollectionViewModel>.reactive(
       viewModelBuilder: () => EmailCollectionViewModel(),
       builder: (context, viewModel, child) => Scaffold(
         appBar: AppBar(
@@ -49,20 +50,5 @@ class EmailCollectionView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class EmailCollectionViewModel extends BaseViewModel {
-  String _email = '';
-
-  void setEmail(String email) {
-    _email = email;
-    notifyListeners();
-  }
-
-  bool get isEmailValid => _email.contains('@');
-
-  void onNextPressed(BuildContext context) {
-    Navigator.of(context).pushNamed('/welcomeConfirmation');
   }
 }
