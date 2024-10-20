@@ -4,8 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:gyde_app/app/app.bottomsheets.dart';
 import 'package:gyde_app/app/app.dialogs.dart';
 import 'package:gyde_app/app/app.locator.dart';
-
-import 'features/app/app_view.dart';
+import 'package:gyde_app/features/onboarding/welcome_view.dart';
 
 void main() async {
   await runZonedGuarded(() async {
@@ -26,4 +25,19 @@ void main() async {
     print('Stack trace: $stackTrace');
     // You might want to log this to a service or show a user-friendly error message
   });
+}
+
+class AppView extends StatelessWidget {
+  const AppView({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Gyde',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const WelcomeView(),
+    );
+  }
 }
