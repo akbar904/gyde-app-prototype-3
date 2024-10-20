@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'email_collection_viewmodel.dart';
 
 class EmailCollectionView extends StatelessWidget {
   @override
@@ -36,7 +37,7 @@ class EmailCollectionView extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: ElevatedButton(
-                  onPressed: model.submitEmail,
+                  onPressed: model.isEmailValid ? model.submitEmail : null,
                   child: Text('Next'),
                 ),
               ),
@@ -45,18 +46,5 @@ class EmailCollectionView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class EmailCollectionViewModel extends BaseViewModel {
-  String _email = '';
-
-  void setEmail(String email) {
-    _email = email;
-    notifyListeners();
-  }
-
-  void submitEmail() {
-    // Logic to handle email submission
   }
 }

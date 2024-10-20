@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'welcome_confirmation_viewmodel.dart';
 
 class WelcomeConfirmationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<WelcomeConfirmationViewModel>.reactive(
       viewModelBuilder: () => WelcomeConfirmationViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
@@ -35,9 +36,7 @@ class WelcomeConfirmationView extends StatelessWidget {
               ),
               SizedBox(height: 40),
               ElevatedButton(
-                onPressed: () {
-                  model.navigateToTermsConditions();
-                },
+                onPressed: model.navigateToTermsConditions,
                 child: Text('Continue'),
               ),
             ],
@@ -45,11 +44,5 @@ class WelcomeConfirmationView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class WelcomeConfirmationViewModel extends BaseViewModel {
-  void navigateToTermsConditions() {
-    // Implement navigation logic to Terms and Conditions page
   }
 }
