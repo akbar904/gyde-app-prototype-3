@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/verification_code_page_viewmodel.dart';
 
 class VerificationCodePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<VerificationCodeViewModel>.reactive(
-      viewModelBuilder: () => VerificationCodeViewModel(),
+    return ViewModelBuilder<VerificationCodePageViewModel>.reactive(
+      viewModelBuilder: () => VerificationCodePageViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text('Verification'),
@@ -43,18 +44,5 @@ class VerificationCodePage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class VerificationCodeViewModel extends BaseViewModel {
-  String _verificationCode = '';
-
-  void updateCode(String code) {
-    _verificationCode = code;
-    notifyListeners();
-  }
-
-  void submitCode() {
-    // Logic to handle submission of the code
   }
 }

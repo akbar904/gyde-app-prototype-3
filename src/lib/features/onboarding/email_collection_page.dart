@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/email_collection_page_viewmodel.dart';
 
 class EmailCollectionPage extends StatelessWidget {
   @override
@@ -48,20 +49,5 @@ class EmailCollectionPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class EmailCollectionViewModel extends BaseViewModel {
-  String _email = '';
-
-  void onEmailChanged(String email) {
-    _email = email;
-    notifyListeners();
-  }
-
-  bool get isEmailValid => _email.contains('@');
-
-  void navigateToNextPage() {
-    // Implement navigation to the next page
   }
 }

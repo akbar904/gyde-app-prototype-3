@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/phone_input_page_viewmodel.dart';
 
 class PhoneInputPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<PhoneInputViewModel>.reactive(
-      viewModelBuilder: () => PhoneInputViewModel(),
+    return ViewModelBuilder<PhoneInputPageViewModel>.reactive(
+      viewModelBuilder: () => PhoneInputPageViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text('Add Your Phone'),
@@ -41,19 +42,5 @@ class PhoneInputPage extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class PhoneInputViewModel extends BaseViewModel {
-  String _phoneNumber;
-  bool get canSubmit => _phoneNumber != null && _phoneNumber.isNotEmpty;
-
-  void updatePhoneNumber(String phoneNumber) {
-    _phoneNumber = phoneNumber;
-    notifyListeners();
-  }
-
-  void submitPhoneNumber() {
-    // Logic to submit phone number and navigate to the next page
   }
 }
