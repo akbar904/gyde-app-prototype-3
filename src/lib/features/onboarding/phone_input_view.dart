@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'phone_input_viewmodel.dart';
 
 class PhoneInputView extends StatelessWidget {
   @override
@@ -39,20 +40,5 @@ class PhoneInputView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class PhoneInputViewModel extends BaseViewModel {
-  String _phoneNumber = '';
-  bool get isPhoneNumberValid =>
-      _phoneNumber.isNotEmpty && RegExp(r'^\+?\d+$').hasMatch(_phoneNumber);
-
-  void onPhoneNumberChanged(String value) {
-    _phoneNumber = value;
-    notifyListeners();
-  }
-
-  void submitPhoneNumber() {
-    // Logic to submit phone number and navigate to next view
   }
 }

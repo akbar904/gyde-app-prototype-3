@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:my_app/features/onboarding/welcome_confirmation_viewmodel.dart';
 
 class WelcomeConfirmationView extends StatelessWidget {
   @override
@@ -43,13 +44,5 @@ class WelcomeConfirmationView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class WelcomeConfirmationViewModel extends BaseViewModel {
-  final NavigationService _navigationService = locator<NavigationService>();
-
-  void onContinuePressed() {
-    _navigationService.navigateTo(Routes.termsConditionsView);
   }
 }

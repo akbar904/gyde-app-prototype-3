@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'auth_options_viewmodel.dart';
 
 class AuthOptionsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<AuthOptionsViewModel>.reactive(
       viewModelBuilder: () => AuthOptionsViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
@@ -36,17 +37,5 @@ class AuthOptionsView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class AuthOptionsViewModel extends BaseViewModel {
-  final NavigationService _navigationService = locator<NavigationService>();
-
-  void navigateToPhoneInput() {
-    _navigationService.navigateTo(Routes.phoneInputView);
-  }
-
-  void navigateToEmailCollection() {
-    _navigationService.navigateTo(Routes.emailCollectionView);
   }
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
-import 'package:stacked_services/stacked_services.dart';
+import 'package:my_app/features/onboarding/welcome_viewmodel.dart';
 
 class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<WelcomeViewModel>.reactive(
       viewModelBuilder: () => WelcomeViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
@@ -38,13 +38,5 @@ class WelcomeView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class WelcomeViewModel extends BaseViewModel {
-  final NavigationService _navigationService = locator<NavigationService>();
-
-  void navigateToAuthOptions() {
-    _navigationService.navigateTo(Routes.authOptionsView);
   }
 }

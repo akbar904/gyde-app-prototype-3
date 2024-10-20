@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'terms_conditions_viewmodel.dart';
 
 class TermsConditionsView extends StatelessWidget {
   @override
@@ -44,11 +45,5 @@ class TermsConditionsView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TermsConditionsViewModel extends BaseViewModel {
-  void onContinue() {
-    // Handle the continue button action, such as navigating to the next page
   }
 }
