@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'terms_conditions_view_model.dart';
 
 class TermsConditionsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<TermsConditionsViewModel>.reactive(
       viewModelBuilder: () => TermsConditionsViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
@@ -42,11 +43,5 @@ class TermsConditionsView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TermsConditionsViewModel extends BaseViewModel {
-  void onContinue() {
-    // Logic to navigate to the next page
   }
 }

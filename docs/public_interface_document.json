@@ -1,7 +1,7 @@
 {
   "package_name": "com.com.walturn.gyde_app",
-  "project_description": "A Flutter project using the Stacked architecture, featuring an onboarding flow for a luxury chauffeur service app called Gyde, with routing, dependency injection, and dialog/bottom sheet management.",
-  "architecture_overview": "The application follows the Stacked architecture with separate folders for app setup, features, UI components, and utilities. It uses Stacked for state management, routing, and dependency injection. The app includes an onboarding flow with multiple pages and sliding transitions.",
+  "project_description": "A Flutter project using the Stacked architecture, featuring an onboarding flow for a luxury chauffeur service app called Gyde, with routing, dependency injection, and dialog/bottom sheet management. The onboarding views now utilize ViewModels for enhanced separation of concerns.",
+  "architecture_overview": "The application follows the Stacked architecture with separate folders for app setup, features, UI components, and utilities. It uses Stacked for state management, routing, and dependency injection. The app includes an onboarding flow with multiple pages and sliding transitions, each managed by its own ViewModel.",
   "folder_structure": {
     "lib": {
       "app": {
@@ -14,12 +14,19 @@
       "features": {
         "onboarding": {
           "welcome_view.dart": {},
+          "welcome_view_model.dart": {},
           "auth_options_view.dart": {},
+          "auth_options_view_model.dart": {},
           "phone_input_view.dart": {},
+          "phone_input_view_model.dart": {},
           "verification_code_view.dart": {},
+          "verification_code_view_model.dart": {},
           "email_collection_view.dart": {},
+          "email_collection_view_model.dart": {},
           "welcome_confirmation_view.dart": {},
-          "terms_conditions_view.dart": {}
+          "welcome_confirmation_view_model.dart": {},
+          "terms_conditions_view.dart": {},
+          "terms_conditions_view_model.dart": {}
         }
       },
       "ui": {
@@ -65,72 +72,142 @@
     },
     {
       "name": "lib/features/onboarding/welcome_view.dart",
-      "description": "The welcome page of the onboarding flow, introducing the service and prompting the user to get started.",
+      "description": "The welcome page of the onboarding flow, introducing the service and prompting the user to get started. It now uses WelcomeViewModel for business logic.",
       "class_diagram": "@startuml\nclass WelcomeView\n@enduml",
       "methods": [],
       "dependencies": [
         "package:stacked/stacked.dart",
-        "package:flutter/material.dart"
+        "package:flutter/material.dart",
+        "package:my_app/features/onboarding/welcome_view_model.dart"
+      ]
+    },
+    {
+      "name": "lib/features/onboarding/welcome_view_model.dart",
+      "description": "ViewModel for WelcomeView, handling the business logic and state management.",
+      "class_diagram": "@startuml\nclass WelcomeViewModel\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:stacked/stacked.dart"
       ]
     },
     {
       "name": "lib/features/onboarding/auth_options_view.dart",
-      "description": "The authentication options page, allowing users to continue with phone or email.",
+      "description": "The authentication options page, allowing users to continue with phone or email. It now uses AuthOptionsViewModel for business logic.",
       "class_diagram": "@startuml\nclass AuthOptionsView\n@enduml",
       "methods": [],
       "dependencies": [
         "package:stacked/stacked.dart",
-        "package:flutter/material.dart"
+        "package:flutter/material.dart",
+        "package:my_app/features/onboarding/auth_options_view_model.dart"
+      ]
+    },
+    {
+      "name": "lib/features/onboarding/auth_options_view_model.dart",
+      "description": "ViewModel for AuthOptionsView, handling the business logic and state management.",
+      "class_diagram": "@startuml\nclass AuthOptionsViewModel\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:stacked/stacked.dart"
       ]
     },
     {
       "name": "lib/features/onboarding/phone_input_view.dart",
-      "description": "The phone number input page for entering and verifying the user's phone number.",
+      "description": "The phone number input page for entering and verifying the user's phone number. It now uses PhoneInputViewModel for business logic.",
       "class_diagram": "@startuml\nclass PhoneInputView\n@enduml",
       "methods": [],
       "dependencies": [
         "package:stacked/stacked.dart",
-        "package:flutter/material.dart"
+        "package:flutter/material.dart",
+        "package:my_app/features/onboarding/phone_input_view_model.dart"
+      ]
+    },
+    {
+      "name": "lib/features/onboarding/phone_input_view_model.dart",
+      "description": "ViewModel for PhoneInputView, handling the business logic and state management.",
+      "class_diagram": "@startuml\nclass PhoneInputViewModel\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:stacked/stacked.dart"
       ]
     },
     {
       "name": "lib/features/onboarding/verification_code_view.dart",
-      "description": "The verification code page for entering the code sent to the user's phone.",
+      "description": "The verification code page for entering the code sent to the user's phone. It now uses VerificationCodeViewModel for business logic.",
       "class_diagram": "@startuml\nclass VerificationCodeView\n@enduml",
       "methods": [],
       "dependencies": [
         "package:stacked/stacked.dart",
-        "package:flutter/material.dart"
+        "package:flutter/material.dart",
+        "package:my_app/features/onboarding/verification_code_view_model.dart"
+      ]
+    },
+    {
+      "name": "lib/features/onboarding/verification_code_view_model.dart",
+      "description": "ViewModel for VerificationCodeView, handling the business logic and state management.",
+      "class_diagram": "@startuml\nclass VerificationCodeViewModel\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:stacked/stacked.dart"
       ]
     },
     {
       "name": "lib/features/onboarding/email_collection_view.dart",
-      "description": "The email collection page for gathering the user's email address.",
+      "description": "The email collection page for gathering the user's email address. It now uses EmailCollectionViewModel for business logic.",
       "class_diagram": "@startuml\nclass EmailCollectionView\n@enduml",
       "methods": [],
       "dependencies": [
         "package:stacked/stacked.dart",
-        "package:flutter/material.dart"
+        "package:flutter/material.dart",
+        "package:my_app/features/onboarding/email_collection_view_model.dart"
+      ]
+    },
+    {
+      "name": "lib/features/onboarding/email_collection_view_model.dart",
+      "description": "ViewModel for EmailCollectionView, handling the business logic and state management.",
+      "class_diagram": "@startuml\nclass EmailCollectionViewModel\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:stacked/stacked.dart"
       ]
     },
     {
       "name": "lib/features/onboarding/welcome_confirmation_view.dart",
-      "description": "The welcome confirmation page, confirming the user's registration and access to services.",
+      "description": "The welcome confirmation page, confirming the user's registration and access to services. It now uses WelcomeConfirmationViewModel for business logic.",
       "class_diagram": "@startuml\nclass WelcomeConfirmationView\n@enduml",
       "methods": [],
       "dependencies": [
         "package:stacked/stacked.dart",
-        "package:flutter/material.dart"
+        "package:flutter/material.dart",
+        "package:my_app/features/onboarding/welcome_confirmation_view_model.dart"
+      ]
+    },
+    {
+      "name": "lib/features/onboarding/welcome_confirmation_view_model.dart",
+      "description": "ViewModel for WelcomeConfirmationView, handling the business logic and state management.",
+      "class_diagram": "@startuml\nclass WelcomeConfirmationViewModel\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:stacked/stacked.dart"
       ]
     },
     {
       "name": "lib/features/onboarding/terms_conditions_view.dart",
-      "description": "The terms and conditions page, displaying the terms of use for the service.",
+      "description": "The terms and conditions page, displaying the terms of use for the service. It now uses TermsConditionsViewModel for business logic.",
       "class_diagram": "@startuml\nclass TermsConditionsView\n@enduml",
       "methods": [],
       "dependencies": [
         "package:stacked/stacked.dart",
-        "package:flutter/material.dart"
+        "package:flutter/material.dart",
+        "package:my_app/features/onboarding/terms_conditions_view_model.dart"
+      ]
+    },
+    {
+      "name": "lib/features/onboarding/terms_conditions_view_model.dart",
+      "description": "ViewModel for TermsConditionsView, handling the business logic and state management.",
+      "class_diagram": "@startuml\nclass TermsConditionsViewModel\n@enduml",
+      "methods": [],
+      "dependencies": [
+        "package:stacked/stacked.dart"
       ]
     },
     {

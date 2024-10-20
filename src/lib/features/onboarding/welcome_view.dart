@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/welcome_view_model.dart';
 
 class WelcomeView extends StatelessWidget {
   @override
@@ -35,11 +36,5 @@ class WelcomeView extends StatelessWidget {
         );
       },
     );
-  }
-}
-
-class WelcomeViewModel extends BaseViewModel {
-  void navigateToNext() {
-    // Logic to navigate to the next page in the onboarding flow
   }
 }
