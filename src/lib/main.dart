@@ -4,8 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:gyde_app/app/app.bottomsheets.dart';
 import 'package:gyde_app/app/app.dialogs.dart';
 import 'package:gyde_app/app/app.locator.dart';
-
-import 'features/app/app_view.dart';
+import 'package:gyde_app/features/onboarding/welcome_view.dart';
 
 void main() async {
   await runZonedGuarded(() async {
