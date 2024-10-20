@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'auth_options_viewmodel.dart';
 
 class AuthOptionsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<AuthenticationOptionsViewModel>.reactive(
-      viewModelBuilder: () => AuthenticationOptionsViewModel(),
+    return ViewModelBuilder<AuthOptionsViewModel>.reactive(
+      viewModelBuilder: () => AuthOptionsViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text('Authentication Options'),
@@ -51,15 +52,5 @@ class AuthOptionsView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class AuthenticationOptionsViewModel extends BaseViewModel {
-  void navigateToPhoneInput() {
-    // Logic to navigate to phone input view
-  }
-
-  void navigateToEmailCollection() {
-    // Logic to navigate to email collection view
   }
 }
