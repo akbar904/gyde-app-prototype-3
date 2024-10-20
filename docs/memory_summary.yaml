@@ -1,0 +1,59 @@
+- ChangeRequest:
+    Date: "2024-10-20T23:45:16.862175"
+    Actions:
+      - RemoveFeature: "Counter"
+      - AddFeature: 
+          Name: "Onboarding Flow"
+          App: "Gyde"
+          Details:
+            Pages:
+              - WelcomePage:
+                  Text: ["Get Started", "Experience luxury travel with ease. Register and manage your bookings seamlessly."]
+                  Button: "Next"
+              - AuthenticationOptionsPage:
+                  Text: ["Continue with Phone", "Continue with Email"]
+                  Button: "Continue"
+              - PhoneNumberInputPage:
+                  Text: ["Add Your Phone", "Enter your phone number to get yourself verified and ready to start your ride.", "Phone Number"]
+                  Button: "Next"
+              - VerificationCodePage:
+                  Text: ["Enter Code", "We sent verification code to your phone number +65 8123 4567"]
+                  Button: "Continue"
+              - EmailCollectionPage:
+                  Text: ["Stay Connected", "To provide you with tailored services and updates, please share your email with us.", "Email Address"]
+                  Button: "Next"
+              - WelcomeConfirmationPage:
+                  Text: ["Welcome Aboard!", "You've unlocked access to exclusive, personalized chauffeur services with Gyde.", "Experience comfort, Tailored to your needs"]
+                  Button: "Continue"
+              - TermsAndConditionsPage:
+                  Text: ["By continuing, you have read and agree to our terms and condition.", "Please read these terms of use carefully before using this platform", "Welcome to Gyde! By using our services, you agree to the following terms and conditions. Please read them carefully."]
+                  Button: "Next"
+            Branding: "Gyde"
+- HighLevelPlan:
+    Date: "2024-10-20T23:45:40.783851"
+    Overview: 
+      - "The application will undergo significant changes to remove the existing counter feature and introduce a new onboarding flow for a luxury chauffeur service app called Gyde."
+      - "This will involve adding multiple pages with sliding transitions and updating the navigation flow to accommodate the new onboarding process."
+    NewFeatures: 
+      - "Welcome page with 'Get Started' and introductory text"
+      - "Authentication options page with 'Continue with Phone' and 'Continue with Email'"
+      - "Phone number input page with phone verification instructions"
+      - "Verification code page for entering the received code"
+      - "Email collection page for gathering user email addresses"
+      - "Welcome confirmation page with access confirmation text"
+      - "Terms and conditions page with legal text and agreement confirmation"
+    ModifiedFeatures: 
+      - "Navigation flow to include new onboarding pages"
+      - "UI components to support Gyde branding throughout the onboarding process"
+    RemovedFeatures: 
+      - "Counter feature from HomeView and HomeViewModel"
+    ArchitecturalChanges: 
+      - "The app.router.dart will be updated to include routes for the new onboarding pages."
+      - "Dependency injection setup in app.locator.dart may need adjustments to support any new services required for the onboarding process."
+    CrossCuttingConcerns: 
+      - "Ensure consistent use of Gyde branding across all new onboarding pages"
+      - "Implement sliding transitions between onboarding pages"
+      - "Update state management to handle the onboarding flow and user authentication process"
+- PublicInterfaceDiff:
+    Date: "2024-10-20T23:46:25.651887"
+    Content: ""
