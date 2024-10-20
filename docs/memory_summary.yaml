@@ -1,0 +1,43 @@
+- Modification_Process:
+    - Initial_Request: "Remove the counter feature and create an onboarding flow for a luxury chauffeur service app called Gyde. The flow should include multiple pages with sliding transitions, each containing specific phrases and a 'Next' or 'Continue' button. The Gyde branding should be used throughout."
+    - High_Level_Plan: 
+        - Overview: "Significant changes will be made to the app, including the removal of the counter feature and the introduction of a new onboarding flow for Gyde. This will involve adding multiple onboarding pages with sliding transitions and updating the app's navigation and state management."
+        - New_Features: 
+            - "Welcome page with 'Get Started' and introductory text"
+            - "Authentication options page with 'Continue with Phone' and 'Continue with Email'"
+            - "Phone number input page with verification instructions"
+            - "Verification code page with code entry instructions"
+            - "Email collection page for user email input"
+            - "Welcome confirmation page with service access confirmation"
+            - "Terms and conditions page with agreement text"
+        - Modified_Features: 
+            - "Navigation flow to include new onboarding pages"
+            - "State management to handle onboarding progress and user authentication"
+        - Removed_Features: 
+            - "Counter feature from HomeView and HomeViewModel"
+        - Architectural_Changes: "Update the app.router.dart to include routes for the new onboarding pages. Ensure the state management in ViewModels supports the onboarding flow and user authentication logic."
+        - Cross_Cutting_Concerns: 
+            - "Ensure consistent branding and UI design across all new onboarding pages"
+            - "Implement sliding transitions between onboarding pages"
+            - "Update dependency injection to include any new services required for onboarding and authentication"
+    - Public_Interface_Diff: 
+        - Additions: 
+            - "Onboarding flow added to the application architecture"
+            - "New dependencies added for onboarding pages"
+            - "New files added for each onboarding page, including a ViewModel for managing the state and navigation logic of the onboarding flow"
+            - "Folder structure updated to include a new 'onboarding' directory with all the new files"
+        - Removals: 
+            - "HomeView and StartupView, along with their corresponding ViewModel files, removed from the application"
+            - "Several methods such as 'incrementCounter', 'showDialog', 'showBottomSheet', and 'runStartupLogic' removed"
+            - "Some dependencies like 'gap.dart' and 'stacked_services.dart' removed from certain files"
+        - Changes: 
+            - "Architecture overview now mentions the onboarding flow and its sliding transitions between pages"
+            - "Navigation flow updated to start with the WelcomeView and progress through the onboarding pages"
+            - "Project description now mentions the onboarding flow for the Gyde service"
+            - "Sequence diagram updated to reflect the new navigation flow"
+            - "State management flow now refers to the OnboardingViewModel for handling business logic and state"
+- Key_Decisions: 
+    - "Decided to remove the counter feature"
+    - "Decided to introduce a new onboarding flow for Gyde"
+    - "Decided to update the app's navigation and state management to accommodate the new flow"
+- App_Evolution: "The app has evolved from focusing on the home and startup views to a comprehensive onboarding flow. This shift significantly affects the app's structure and functionality."
