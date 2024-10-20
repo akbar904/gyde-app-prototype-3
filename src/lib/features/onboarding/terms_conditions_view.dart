@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/terms_conditions_viewmodel.dart';
 
 class TermsConditionsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<TermsConditionsViewModel>.reactive(
       viewModelBuilder: () => TermsConditionsViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
@@ -32,10 +33,7 @@ class TermsConditionsView extends StatelessWidget {
               ),
               SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {
-                  // Navigate to the next onboarding page or perform any action
-                  model.onContinue();
-                },
+                onPressed: model.onContinue,
                 child: Text('Continue'),
               ),
             ],
@@ -43,11 +41,5 @@ class TermsConditionsView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class TermsConditionsViewModel extends BaseViewModel {
-  void onContinue() {
-    // Logic for continuing to the next view
   }
 }

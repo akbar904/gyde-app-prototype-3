@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/verification_viewmodel.dart';
 
 class VerificationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<VerificationViewModel>.reactive(
       viewModelBuilder: () => VerificationViewModel(),
       builder: (context, model, child) {
         return Scaffold(
@@ -44,18 +45,5 @@ class VerificationView extends StatelessWidget {
         );
       },
     );
-  }
-}
-
-class VerificationViewModel extends BaseViewModel {
-  String _code;
-
-  void onCodeChanged(String value) {
-    _code = value;
-    notifyListeners();
-  }
-
-  void onContinue() {
-    // Logic to handle code verification
   }
 }

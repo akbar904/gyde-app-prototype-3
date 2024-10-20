@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/welcome_viewmodel.dart';
 
 class WelcomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<WelcomeViewModel>.reactive(
       viewModelBuilder: () => WelcomeViewModel(),
       builder: (context, model, child) => Scaffold(
         body: Padding(
@@ -28,11 +29,5 @@ class WelcomeView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class WelcomeViewModel extends BaseViewModel {
-  void onGetStarted() {
-    // Navigate to the next onboarding page
   }
 }

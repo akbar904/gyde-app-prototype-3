@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/email_collection_viewmodel.dart';
 
 class EmailCollectionView extends StatelessWidget {
   @override
@@ -37,18 +38,5 @@ class EmailCollectionView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class EmailCollectionViewModel extends BaseViewModel {
-  String? _email;
-
-  void onEmailChanged(String email) {
-    _email = email;
-    notifyListeners();
-  }
-
-  void onContinue() {
-    // Add logic to handle email submission and navigate to the next page
   }
 }

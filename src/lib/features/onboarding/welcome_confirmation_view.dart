@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/welcome_confirmation_viewmodel.dart';
 
 class WelcomeConfirmationView extends StatelessWidget {
   @override
@@ -42,11 +43,5 @@ class WelcomeConfirmationView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class WelcomeConfirmationViewModel extends BaseViewModel {
-  void onContinuePressed() {
-    // Implement navigation to the next page or flow
   }
 }

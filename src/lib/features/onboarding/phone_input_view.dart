@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/phone_input_viewmodel.dart';
 
 class PhoneInputView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder.reactive(
+    return ViewModelBuilder<PhoneInputViewModel>.reactive(
       viewModelBuilder: () => PhoneInputViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
@@ -41,20 +42,5 @@ class PhoneInputView extends StatelessWidget {
         ),
       ),
     );
-  }
-}
-
-class PhoneInputViewModel extends BaseViewModel {
-  String _phoneNumber = '';
-
-  void onPhoneNumberChanged(String value) {
-    _phoneNumber = value;
-    notifyListeners();
-  }
-
-  bool get isPhoneNumberValid => _phoneNumber.isNotEmpty;
-
-  void onContinue() {
-    // Logic for continuing to the next page
   }
 }

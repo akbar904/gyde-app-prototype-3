@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:my_app/features/onboarding/auth_options_viewmodel.dart';
 
 class AuthOptionsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ViewModelBuilder<GenericViewModel>.reactive(
-      viewModelBuilder: () => GenericViewModel(),
+    return ViewModelBuilder<AuthOptionsViewModel>.reactive(
+      viewModelBuilder: () => AuthOptionsViewModel(),
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
           title: Text('Gyde'),
@@ -22,16 +23,12 @@ class AuthOptionsView extends StatelessWidget {
               ),
               SizedBox(height: 40.0),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/phoneInput');
-                },
+                onPressed: model.navigateToPhoneInput,
                 child: Text('Continue with Phone'),
               ),
               SizedBox(height: 20.0),
               ElevatedButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, '/emailCollection');
-                },
+                onPressed: model.navigateToEmailCollection,
                 child: Text('Continue with Email'),
               ),
             ],
@@ -41,5 +38,3 @@ class AuthOptionsView extends StatelessWidget {
     );
   }
 }
-
-class GenericViewModel extends BaseViewModel {}
