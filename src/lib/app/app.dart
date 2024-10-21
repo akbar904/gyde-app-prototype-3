@@ -15,6 +15,12 @@ import 'package:gyde_app/features/profile_setup/payment_method_view.dart';
 import 'package:gyde_app/features/profile_setup/card_details_view.dart';
 import 'package:gyde_app/features/profile_setup/notification_permission_view.dart';
 import 'package:gyde_app/features/profile_setup/profile_completion_view.dart';
+import 'package:gyde_app/features/personalized_experience/amenities_selection_view.dart';
+import 'package:gyde_app/features/personalized_experience/frequently_visited_places_view.dart';
+import 'package:gyde_app/features/personalized_experience/save_place_view.dart';
+import 'package:gyde_app/features/personalized_experience/vehicle_selection_view.dart';
+import 'package:gyde_app/features/personalized_experience/chauffeur_selection_view.dart';
+import 'package:gyde_app/features/personalized_experience/booking_confirmation_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 // @stacked-import
@@ -36,6 +42,12 @@ import 'package:stacked_services/stacked_services.dart';
     MaterialRoute(page: CardDetailsView),
     MaterialRoute(page: NotificationPermissionView),
     MaterialRoute(page: ProfileCompletionView),
+    MaterialRoute(page: AmenitiesSelectionView),
+    MaterialRoute(page: FrequentlyVisitedPlacesView),
+    MaterialRoute(page: SavePlaceView),
+    MaterialRoute(page: VehicleSelectionView),
+    MaterialRoute(page: ChauffeurSelectionView),
+    MaterialRoute(page: BookingConfirmationView),
     // @stacked-route
   ],
   dependencies: [
