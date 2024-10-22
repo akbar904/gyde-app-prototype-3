@@ -21,6 +21,9 @@ import 'package:gyde_app/features/personalized_experience/save_place_view.dart';
 import 'package:gyde_app/features/personalized_experience/vehicle_selection_view.dart';
 import 'package:gyde_app/features/personalized_experience/chauffeur_selection_view.dart';
 import 'package:gyde_app/features/personalized_experience/booking_confirmation_view.dart';
+import 'package:gyde_app/features/homepage/main_rides_view.dart';
+import 'package:gyde_app/features/homepage/chauffeur_details_view.dart';
+import 'package:gyde_app/features/homepage/profile_view.dart';
 import 'package:stacked/stacked_annotations.dart';
 import 'package:stacked_services/stacked_services.dart';
 // @stacked-import
@@ -48,6 +51,9 @@ import 'package:stacked_services/stacked_services.dart';
     MaterialRoute(page: VehicleSelectionView),
     MaterialRoute(page: ChauffeurSelectionView),
     MaterialRoute(page: BookingConfirmationView),
+    MaterialRoute(page: MainRidesView),
+    MaterialRoute(page: ChauffeurDetailsView),
+    MaterialRoute(page: ProfileView),
     // @stacked-route
   ],
   dependencies: [
