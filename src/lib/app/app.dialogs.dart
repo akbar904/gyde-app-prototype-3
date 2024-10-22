@@ -16,7 +16,7 @@ enum DialogType {
 void setupDialogUi() {
   final dialogService = locator<DialogService>();
 
-  final builders = <DialogType, DialogBuilder>{
+  final Map<DialogType, DialogBuilder> builders = {
     DialogType.infoAlert: (context, request, completer) =>
         InfoAlertDialog(request: request, completer: completer),
   };

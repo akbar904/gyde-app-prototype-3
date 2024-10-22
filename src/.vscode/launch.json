@@ -13,7 +13,7 @@
         "--flavor",
         "development",
         "--target",
-        "lib/main/main_development.dart"
+        "lib/main.dart"
       ]
     },
     {
@@ -32,13 +32,13 @@
       "name": "Launch web production",
       "request": "launch",
       "type": "dart",            
-      "program": "lib/main/main_production.dart",
+      "program": "lib/main.dart",
       "args": [
           "--flavor",
           "--web-port",
           "5000",
           "--target",
-          "lib/main/main_production.dart"
+          "lib/main.dart"
       ],      
   }
   ]

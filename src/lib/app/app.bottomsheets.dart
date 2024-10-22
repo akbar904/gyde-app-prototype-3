@@ -16,7 +16,7 @@ enum BottomSheetType {
 void setupBottomSheetUi() {
   final bottomsheetService = locator<BottomSheetService>();
 
-  final builders = <BottomSheetType, SheetBuilder>{
+  final Map<BottomSheetType, SheetBuilder> builders = {
     BottomSheetType.notice: (context, request, completer) =>
         NoticeSheet(request: request, completer: completer),
   };
