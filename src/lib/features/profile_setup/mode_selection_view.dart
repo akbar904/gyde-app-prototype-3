@@ -77,9 +77,6 @@ class SelectionButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
-      style: ElevatedButton.styleFrom(
-        primary: isSelected ? Colors.blue : Colors.grey,
-      ),
       onPressed: onPressed,
       child: Text(
         text,

@@ -17,12 +17,12 @@ class NotificationPermissionView extends StatelessWidget {
             children: <Widget>[
               Text(
                 'Get Notified',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.bodyMedium,
               ),
               SizedBox(height: 8.0),
               Text(
                 'Ensure a seamless travel experience by allowing notifications.',
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               Spacer(),
               ElevatedButton(

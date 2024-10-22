@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:gyde_app/app/app.locator.dart';
 import 'package:gyde_app/app/app.router.dart';
 import 'package:gyde_app/ui/common/ui_helpers.dart';
+import 'package:stacked_services/stacked_services.dart';
 
 class CompanyInformationView extends StatelessWidget {
   @override
@@ -20,7 +21,7 @@ class CompanyInformationView extends StatelessWidget {
             children: [
               Text(
                 'Provide your basic details for a personalized experience.',
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               verticalSpaceMedium,
               TextField(
@@ -83,7 +84,8 @@ class CompanyInformationViewModel extends BaseViewModel {
   }
 
   void navigateToNext() {
-    // Navigate to the next screen in the profile setup flow
-    NavigationService().navigateTo(Routes.packageSelectionView);
+    final NavigationService _navigationService = locator<NavigationService>();
+
+    _navigationService.navigateTo(Routes.packageSelectionView);
   }
 }

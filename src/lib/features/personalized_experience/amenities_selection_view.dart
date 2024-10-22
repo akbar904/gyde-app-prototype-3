@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
+
+import '../../app/app.locator.dart';
+import '../../app/app.router.dart';
 
 class AmenitiesSelectionView extends StatelessWidget {
   @override
@@ -53,7 +57,11 @@ class AmenitiesSelectionView extends StatelessWidget {
               ),
               ElevatedButton(
                 onPressed: () {
-                  // Handle continue action
+                  final NavigationService _navigationService =
+                      locator<NavigationService>();
+
+                  _navigationService
+                      .navigateTo(Routes.frequentlyVisitedPlacesView);
                 },
                 child: Text('Continue'),
               ),

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../app/app.router.dart';
+
 class PhoneInputView extends StatelessWidget {
   const PhoneInputView({super.key});
 
@@ -60,6 +62,6 @@ class PhoneInputViewModel extends BaseViewModel {
 
   Future<void> onNextPressed() async {
     // Implement the navigation to the next page
-    await _navigationService.navigateTo('VerificationCodeViewRoute');
+    await _navigationService.navigateTo(Routes.verificationCodeView);
   }
 }

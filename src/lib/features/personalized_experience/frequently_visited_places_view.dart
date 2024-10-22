@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../app/app.locator.dart';
+import '../../app/app.router.dart';
+
 class FrequentlyVisitedPlacesView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -13,14 +16,14 @@ class FrequentlyVisitedPlacesView extends StatelessWidget {
         ),
         body: Column(
           children: [
-            Expanded(
-              child: MapView(), // Assuming a MapView widget exists
-            ),
+            // Expanded(
+            //   child: MapView(),
+            // ),
             Container(
               padding: EdgeInsets.all(16.0),
               child: Column(
                 children: [
-                  Text(
+                  const Text(
                     'Quickly access your favorite destinations, helping you adjust your schedule with ease.',
                     style: TextStyle(fontSize: 16.0),
                   ),
@@ -31,6 +34,16 @@ class FrequentlyVisitedPlacesView extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            ElevatedButton(
+              onPressed: () {
+                final NavigationService _navigationService =
+                    locator<NavigationService>();
+
+                _navigationService.navigateTo(Routes.vehicleSelectionView);
+              },
+              child: Text('Continue'),
             ),
           ],
         ),

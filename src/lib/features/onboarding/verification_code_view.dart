@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
+
+import '../../app/app.locator.dart';
+import '../../app/app.router.dart';
 
 class VerificationCodeView extends StatelessWidget {
   const VerificationCodeView({super.key});
@@ -66,8 +70,8 @@ class VerificationCodeViewModel extends BaseViewModel {
   }
 
   void verifyCode() {
-    // Logic to verify the code goes here
-    // For now, we will just print the code to the console
-    print('Verification code entered: $_code');
+    final NavigationService _navigationService = locator<NavigationService>();
+
+    _navigationService.navigateTo(Routes.termsConditionsView);
   }
 }

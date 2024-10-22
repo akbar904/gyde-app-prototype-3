@@ -17,7 +17,7 @@ class PaymentMethodView extends StatelessWidget {
             children: [
               Text(
                 'Add your preferred payment method securely.',
-                style: Theme.of(context).textTheme.subtitle1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               SizedBox(height: 20),
               ListTile(

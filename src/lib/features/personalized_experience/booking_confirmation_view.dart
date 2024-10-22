@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:stacked_services/stacked_services.dart';
+
+import '../../app/app.locator.dart';
+import '../../app/app.router.dart';
 
 class BookingConfirmationView extends StatelessWidget {
   @override
@@ -17,12 +21,12 @@ class BookingConfirmationView extends StatelessWidget {
             children: [
               Text(
                 'You\'re all set',
-                style: Theme.of(context).textTheme.headline4,
+                style: Theme.of(context).textTheme.labelLarge,
               ),
               SizedBox(height: 10),
               Text(
                 'Everything is set! Would you like to book your first ride with ${model.chauffeurName}?',
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
               ),
               SizedBox(height: 20),
               BookingSummary(),
@@ -62,7 +66,7 @@ class BookingSummary extends StatelessWidget {
         children: [
           Text(
             'Booking Summary',
-            style: Theme.of(context).textTheme.subtitle1,
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
           SizedBox(height: 10),
           // Add detailed booking summary here
@@ -80,8 +84,9 @@ class BookingConfirmationViewModel extends BaseViewModel {
       'John Doe'; // Example name, in real case it should be dynamic
 
   void confirmBooking() {
-    // Logic to confirm booking
-    print('Booking confirmed');
+    final NavigationService _navigationService = locator<NavigationService>();
+
+    _navigationService.navigateTo(Routes.personalInformationView);
   }
 
   void modifyBooking() {

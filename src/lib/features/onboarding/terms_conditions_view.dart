@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
+import '../../app/app.router.dart';
+
 class TermsConditionsView extends StatelessWidget {
   const TermsConditionsView({super.key});
 
@@ -57,6 +59,6 @@ class TermsConditionsViewModel extends BaseViewModel {
   final NavigationService _navigationService = NavigationService();
 
   void onNext() {
-    _navigationService.navigateTo('/nextPage'); // Update with actual route name
+    _navigationService.navigateTo(Routes.amenitiesSelectionView);
   }
 }
