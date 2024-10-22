@@ -3,16 +3,18 @@ import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
 class TermsConditionsView extends StatelessWidget {
+  const TermsConditionsView({super.key});
+
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder<TermsConditionsViewModel>.reactive(
-      viewModelBuilder: () => TermsConditionsViewModel(),
+      viewModelBuilder: TermsConditionsViewModel.new,
       builder: (context, model, child) => Scaffold(
         appBar: AppBar(
-          title: Text('Terms and Conditions'),
+          title: const Text('Terms and Conditions'),
         ),
-        body: Padding(
-          padding: const EdgeInsets.all(16.0),
+        body: const Padding(
+          padding: EdgeInsets.all(16),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -38,12 +40,12 @@ class TermsConditionsView extends StatelessWidget {
           ),
         ),
         bottomNavigationBar: Padding(
-          padding: const EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16),
           child: ElevatedButton(
             onPressed: () {
               model.onNext();
             },
-            child: Text('Continue'),
+            child: const Text('Continue'),
           ),
         ),
       ),
